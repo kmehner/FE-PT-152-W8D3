@@ -1,0 +1,80 @@
+
+body {
+  background-color: rgba(78, 63, 242, 0.113);
+}
+
+.linear_gradient {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(180deg, blue, white);
+}
+
+.radial_gradient {
+  margin-top: 10px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(ellipse, blue, lightblue)
+}
+
+.box_text_shadow{
+  width: 300px;
+  height: 300px;
+  font-size: 24px;
+  background-color: darkblue;
+  /* color: white; */
+
+  /* 1st num = horizontal, 2nd num = vertical, 3rd num - blur, 4th num - spread, last = color */
+  box-shadow: 10px 10px 20px 20px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+
+  text-shadow: 1px 1px 3px white;
+}
+
+.bg_clip {
+  background: linear-gradient(to right, #b5cde8, blue);
+  /* background-image: url("images/heart.png"); */
+  background-clip: text; 
+  color: transparent
+}
+
+@keyframes pulsing-heart {
+  0% { transform: scale(1);}
+  50% { transform: scale(1.1);}
+  100% { transform: scale(1);}
+}
+
+/* 
+
+ease-in - specifies a transition effect with a slow start
+ease-out - specifies a transition effect with a slow end
+ease-in-out - specifies a transition effect with a slow start and end
+ */
+.heart {
+  width: 150px;
+  animation: pulsing-heart 2s infinite ease-out;
+  position: absolute;
+  top: 10px;
+  left: 230px;
+  z-index: 0;
+  filter: grayscale(100);
+  transition: .3;
+}
+
+.heart:hover {
+  filter: grayscale(0);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg);}
+  to { 
+    transform: rotate(360deg); 
+    margin-left: 230px; 
+    opacity: 0;}
+}
+
+.wheel {
+  width: 150px;
+  animation: rotate 10s infinite; 
+  z-index: 1000;
+  animation-direction: alternate; 
+}
